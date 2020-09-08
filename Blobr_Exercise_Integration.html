@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="blobr_exercise_integration.css"/>
+		<title>Blobr | Statistics</title>
+		<script type="text/javascript" src="functions.js"></script>
+	</head>
+	
+	<body>
+		<div class="navbar">
+			<div class="user">
+				<p class="pearson"><strong>Pearson Specter Litt</strong></p>	
+				<div onclick="showOrHidePopUp()">
+					<p id="username">Mike Ross </p>
+				</div>
+				<ul id="popup">
+					<li><img src="Icons/user.svg" alt="" class="icon"><a href="#">Account Settings</a></li>
+					<li><img src="Icons/plus.svg" alt="" class="icon"><a href="#">New organization</a></li>
+					<li><img src="Icons/logout.svg" alt="" class="icon"><a href="#">Log out</a></li>
+				</ul>
+			</div>
+			
+			<nav>
+				<ul>
+					<li><img src="Icons/house.svg" alt="" class="icon"><a href="#">Get Started</a></li>
+					<li><img src="Icons/transactions.svg" alt="" class="icon"><a href="#">Transactions</a></li>
+					<li id="current-page"><img src="Icons/statistics.svg" alt="" class="icon"><a href="#">Statistics</a></li>
+					<li><img src="Icons/settings.svg" alt="" class="icon"><a href="#">Settings</a></li>
+					<li><img src="Icons/help.svg" alt="" class="icon"><a href="#">Help Center</a></li>
+				</ul>
+			</nav>
+		</div>
+		
+		<div id="content">
+			<h1>Statistics</h1>
+			
+			<div class="gray-background">
+				<ul class="filters">
+					<li><button>Days</button></li>
+					<li><button>Weeks</button></li>
+					<li><button class="selected">Months</button></li>
+					<li><button>Quarters</button></li>
+					<li><button>Years</button></li>
+					<li><button>Custom...</button></li>
+				</ul>
+				
+				<ul class="monthsbar">
+					<li><button><img src="Icons/chevron-left.svg" alt="" height="16" width="16"></button></li>
+					<li><button><strong>November</strong><br>2019</button></li>
+					<li><button><strong>December</strong><br>2019</button></li>
+					<li><button><strong>January</strong><br>2020</button></li>
+					<li><button><strong>February</strong><br>2020</button></li>
+					<li><button><strong>March</strong><br>2020</button></li>
+					<li><button><strong>April</strong><br>2020</button></li>
+					<li><button><strong>May</strong><br>2020</button></li>
+					<li><button><strong>June</strong><br>2020</button></li>
+					<li><button><strong>July</strong><br>2020</button></li>
+					<li><button><strong>August</strong><br>2020</button></li>
+					<li><button><strong class="selected">September</strong><br>2020</button></li>
+					<li><button><img src="Icons/chevron-right.svg" alt="" height="16" width="16"></button></li>
+				</ul>
+			</div>
+			
+			<div class="graph">
+				<h1>Graph</h1>			
+			</div>
+			
+			<div class="gray-background">
+				<div class="stats">
+					<h2>Statistics</h2>
+					
+					<table class="stats-table">
+						<tr>
+							<td><h3>Revenue</h3></td>
+							<td class="right-align light-gray">Transactions</td>
+						</tr>
+						<tr class="middle-line">
+							<td><strong>€5.00</strong></td>
+							<td class="right-align">4</td>
+						</tr>
+						<tr><td><h3>Compared to last year</h3><td></tr>
+						<tr>
+							<td class="light-gray">€0.00</td>
+							<td class="right-align light-gray">0</td>
+						</tr>
+					</table>
+					
+					<table class="stats-table" id="middle-stats-table">
+						<tr>
+							<td><h3>Refunds</h3></td>
+							<td class="right-align light-gray">Transactions</td>
+						</tr>
+						<tr class="middle-line">
+							<td><strong>€0.00</strong></td>
+							<td class="right-align">0</td>
+						</tr>
+						<tr><td><h3>Compared to last year</h3><td></tr>
+						<tr>
+							<td class="light-gray">€0.00</td>
+							<td class="right-align light-gray">0</td>
+						</tr>
+					</table>
+					
+					<table class="stats-table" style="float : right">
+						<tr>
+							<td><h3>Chargebacks</h3></td>
+							<td class="right-align light-gray">Transactions</td>
+						</tr>
+						<tr class="middle-line">
+							<td><strong>€0.00</strong></td>
+							<td class="right-align">0</td>
+						</tr>
+						<tr><td><h3>Compared to last year</h3><td></tr>
+						<tr>
+							<td class="light-gray">€0.00</td>
+							<td class="right-align light-gray">0</td>
+						</tr>
+					</table>
+					
+					<h2>Per day</h2>
+					
+					<table class="table-per-day">
+						<tr>
+							<td><strong>Date</strong></td>
+							<td class="right-align"><strong>Revenue</strong></td>
+							<td class="center-align">Transactions</td>
+							<td class="right-align"><strong>Refunds</strong></td>
+							<td class="center-align">Transactions</td>
+							<td class="right-align"><strong>Chargebacks</strong></td>
+							<td class="center-align">Transactions</td>
+						</tr>
+						<tr class="middle-line">
+							<td class="gray">Tue, 1 Sep 2020</td>
+							<td class="right-align"><strong>€2.00</strong></td>
+							<td class="center-align light-gray">1</td>
+							<td class="right-align">€0.00</td>
+							<td class="center-align light-gray">0</td>
+							<td class="right-align">€0.00</td>
+							<td class="center-align light-gray">0</td>
+						</tr>
+						<tr id="middle-line2">
+							<td class="gray">Wed, 2 Sep 2020</td>
+							<td class="right-align"><strong>€1.00</strong></td>
+							<td class="center-align light-gray">1</td>
+							<td class="right-align">€0.00</td>
+							<td class="center-align light-gray">0</td>
+							<td class="right-align">€0.00</td>
+							<td class="center-align light-gray">0</td>
+						</tr>
+						<tr>
+							<td class="gray">Thu, 3 Sep 2020</td>
+							<td class="right-align"><strong>€3.00</strong></td>
+							<td class="center-align light-gray">2</td>
+							<td class="right-align">€0.00</td>
+							<td class="center-align light-gray">0</td>
+							<td class="right-align">€0.00</td>
+							<td class="center-align light-gray">0</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
